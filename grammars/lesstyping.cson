@@ -1,0 +1,126 @@
+'scopeName':'source.lt'
+'name':'Latte-lang'
+'fileTypes':['lt','lts']
+'patterns':[
+    {
+        'begin': '/\\*'
+        'beginCaptures':
+            '0':
+                'name': 'punctuation.definition.comment.begin.lt'
+        'end': '\\*/'
+        'endCaptures':
+            '0':
+                'name': 'punctuation.definition.comment.end.lt'
+        'name': 'comment.block.lt'
+    }
+    {
+        'match':'(\\b[0-9]+\\.[0-9]+\\b|\\b[0-9]+\\b)'
+        'name':'constant.numeric.lt'
+    }
+    {
+        'match':'(\\b(public|private|protected|pkg|abstract|val|native|synchronized|transient|volatile|strictfp|data)\\b)'
+        'name':'keyword.modifier.lt'
+    }
+    {
+        'match':';.*'
+        'name':'comment.lt'
+    }
+    {
+        'match':'\\b(true|false|yes|no)\\b'
+        'name':'constant.boolean.lt'
+    }
+    {
+        'match':'(\\b(import|package|this|static|int|bool|char|byte|long|short|float|double|type|null|as|try|catch|undefined|and|or|throw|finally|not|is|return)\\b)'
+        'name':'keyword.lt'
+    }
+    {
+        'match':'\\b(void|Unit)\\b'
+        'name':'keyword.other.unit'
+    }
+    {
+        'match':'\\b(do|while|if|else|elseif|in|for)\\b'
+        'name':'keyword.control.lt'
+    }
+    {
+        'match':'(\\:\\:\\:|\\<|\\&|\\^|\\||\\+|\\-|\\*|\\/|\\%|\\~|\\=|\\!)'
+        'name':'keyword.operator.lt'
+    }
+    {
+        'match':'(^define|^undef)'
+        'name':'invalid.illegal.lt'
+    }
+    {
+        'captures':
+            '1':
+                'name': 'support.class.lt'
+            '2':
+                'name': 'variable.lt'
+        'match':'\\b(class|interface)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
+    }
+    {
+        'captures':
+            '1':
+                'name': 'variable.lt'
+            '2':
+                'name': 'variable.lt'
+        'match':'\\b(\\w+)\\s*\\.\\s*(\\w+)\\b'
+    }
+    {
+        'captures':
+            '1':
+                'name': 'variable.lt'
+        'match':'\\.\\s*(\\w+)\\b'
+    }
+    {
+        'captures':
+            '1':
+                'name': 'support.function.any-method.lt'
+        'match': '\\b(\\b([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*\\b)\\s*\\('
+    }
+    {
+        'begin':'"'
+        'beginCaptures':
+            '0':
+                'name':'punctuation.definition.string.begin.lt'
+        'end':'"'
+        'endCaptures':
+            '0':
+                'name':'punctuation.definition.string.end.lt'
+        'name':'string.quoted.double.lt'
+        'patterns':[
+            {
+                'include':'punctuation.definition.string.begin.lt'
+            }
+            {
+                'include':'punctuation.definition.string.end.lt'
+            }
+            {
+                'match':'\\\\.'
+                'name':'constant.character.escape.lt'
+            }
+        ]
+    }
+    {
+        'begin':"'"
+        'beginCaptures':
+            '0':
+                'name':'punctuation.definition.string.begin.lt'
+        'end':"'"
+        'endCaptures':
+            '0':
+                'name':'punctuation.definition.string.end.lt'
+        'name':'string.quoted.double.lt'
+        'patterns':[
+            {
+                'include':'punctuation.definition.string.begin.lt'
+            }
+            {
+                'include':'punctuation.definition.string.end.lt'
+            }
+            {
+                'match':'\\\\.'
+                'name':'constant.character.escape.lt'
+            }
+        ]
+    }
+]
