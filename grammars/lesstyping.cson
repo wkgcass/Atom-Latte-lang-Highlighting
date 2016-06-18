@@ -30,7 +30,7 @@
         'name':'constant.boolean.lt'
     }
     {
-        'match':'(\\b(import|package|this|static|int|bool|char|byte|long|short|float|double|type|null|as|try|catch|undefined|and|or|throw|finally|not|is|return)\\b)'
+        'match':'(\\b(import|package|this|static|int|bool|char|byte|long|short|float|double|type|null|as|try|catch|undefined|and|or|throw|finally|not|is|return|break|continue)\\b)'
         'name':'keyword.lt'
     }
     {
@@ -55,7 +55,21 @@
                 'name': 'support.class.lt'
             '2':
                 'name': 'variable.lt'
-        'match':'\\b(class|interface)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
+        'match':'\\b(class|interface|fun)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
+    }
+    {
+        'captures':
+            '1':
+                'name': 'support.function.any-method.lt'
+        'match':'\\.\\s*(\\w+)\\('
+    }
+    {
+        'captures':
+            '1':
+                'name': 'variable.lt'
+            '2':
+                'name': 'support.function.any-method.lt'
+        'match':'\\b(\\w+)\\s*\\.\\s*(\\w+)\\('
     }
     {
         'captures':
