@@ -18,7 +18,7 @@
         'name':'constant.numeric.lt'
     }
     {
-        'match':'(\\b(public|private|protected|pkg|abstract|val|native|synchronized|transient|volatile|strictfp|data)\\b)'
+        'match':'(\\b(public|private|protected|interal|abstract|var|val|native|synchronized|transient|volatile|strictfp|data|new|def|nonnull|nonempty)\\b)'
         'name':'keyword.modifier.lt'
     }
     {
@@ -38,7 +38,7 @@
         'name':'keyword.other.unit'
     }
     {
-        'match':'\\b(do|while|if|else|elseif|in|for)\\b'
+        'match':'\\b(do|while|if|else|elseif|in|for|await)\\b'
         'name':'keyword.control.lt'
     }
     {
@@ -55,7 +55,7 @@
                 'name': 'support.class.lt'
             '2':
                 'name': 'variable.lt'
-        'match':'\\b(class|interface|fun)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
+        'match':'\\b(class|interface|fun|object)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
     }
     {
         'captures':
