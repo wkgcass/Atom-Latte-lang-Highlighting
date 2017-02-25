@@ -1,6 +1,6 @@
 'scopeName':'source.lt'
 'name':'Latte-lang'
-'fileTypes':['lt','lts']
+'fileTypes':['lt','lts','latte']
 'patterns':[
     {
         'begin': '/\\*'
@@ -18,11 +18,11 @@
         'name':'constant.numeric.lt'
     }
     {
-        'match':'(\\b(public|private|protected|interal|abstract|var|val|native|synchronized|transient|volatile|strictfp|data|new|def|nonnull|nonempty)\\b)'
+        'match':'(\\b(public|private|protected|internal|abstract|var|val|native|synchronized|transient|volatile|strictfp|data|new|def|nonnull|nonempty|implicit)\\b)'
         'name':'keyword.modifier.lt'
     }
     {
-        'match':';.*'
+        'match':'//.*'
         'name':'comment.lt'
     }
     {
@@ -30,7 +30,7 @@
         'name':'constant.boolean.lt'
     }
     {
-        'match':'(\\b(import|package|this|static|int|bool|char|byte|long|short|float|double|type|null|as|try|catch|undefined|and|or|throw|finally|not|is|return|break|continue)\\b)'
+        'match':'(\\b(import|package|this|static|int|bool|char|byte|long|short|float|double|type|null|as|try|catch|and|or|throw|finally|not|is|return|break|continue|match|case|implicit)\\b)'
         'name':'keyword.lt'
     }
     {
@@ -38,16 +38,12 @@
         'name':'keyword.other.unit'
     }
     {
-        'match':'\\b(do|while|if|else|elseif|in|for|await)\\b'
+        'match':'\\b(do|while|if|else|elseif|in|for|async|await)\\b'
         'name':'keyword.control.lt'
     }
     {
-        'match':'(\\:\\:\\:|\\<|\\&|\\^|\\||\\+|\\-|\\*|\\/|\\%|\\~|\\=|\\!)'
+        'match':'(=\\>|\\:\\:\\:|\\<|\\&|\\^|\\||\\+|\\-|\\*|\\/|\\%|\\~|\\=|\\!)'
         'name':'keyword.operator.lt'
-    }
-    {
-        'match':'(^define|^undef)'
-        'name':'invalid.illegal.lt'
     }
     {
         'captures':
@@ -55,7 +51,7 @@
                 'name': 'support.class.lt'
             '2':
                 'name': 'variable.lt'
-        'match':'\\b(class|interface|fun|object)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
+        'match':'\\b(class|interface|fun|object|annotation)\\s+(([a-zA-Z]|\\$|\\_)(\\w|\\$|\\_)*)\\b'
     }
     {
         'captures':
@@ -138,3 +134,4 @@
         ]
     }
 ]
+
